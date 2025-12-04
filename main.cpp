@@ -10,8 +10,9 @@ void mostrar_menu() {
 	system("cls");
     cout << "\n=== SISTEMA DE DETECCION DE VULNERABILIDADES ===\n";
     cout << "1. Entrenar modelo\n";
-    cout << "2. Usar modelo (predecir)\n";
-    cout << "3. Salir\n";
+    cout << "2. Usar modelo (predecir ejemplo)\n";
+    cout << "3. Analizar codigo_vulnerable_demo.py\n";
+    cout << "4. Salir\n";
     cout << "Seleccione una opcion: ";
 }
 
@@ -48,15 +49,29 @@ int main()
                 
             case 3:
             	system("cls");
+                cout << "\nAnalizando codigo_vulnerable_demo.py...\n";
+                try {
+                    cout << "Extrayendo caracteristicas del codigo vulnerable...\n";
+                    system("C:/Users/alexi/AppData/Local/Programs/Python/Python311/python.exe analizar_codigo_vulnerable.py");
+                    cout << "\nAhora analizando con el modelo...\n";
+                    usar_modelo_mineriadatos();
+                } catch(const exception& e) {
+                    cerr << "Error al analizar el codigo: " << e.what() << endl;
+                }
+                system("pause");
+                break;
+                
+            case 4:
+            	system("cls");
                 cout << "\nSaliendo del programa...\n";
                 break;
                 
             default:
-                cout << "\nOpción invalida. Por favor seleccione 1, 2 o 3.\n";
+                cout << "\nOpción invalida. Por favor seleccione 1, 2, 3 o 4.\n";
                 system("pause");
         }
         
-    } while(opcion != 3);
+    } while(opcion != 4);
     
     return 0;
 }
