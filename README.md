@@ -571,59 +571,6 @@ Basado en evaluación del conjunto de prueba:
 4. **Integración gradual:** Comenzar con alertas informativas, no bloqueantes
 5. **Contexto organizacional:** Adaptar umbrales según políticas de seguridad
 
-## Mejoras Futuras
-
-### Corto Plazo (1-3 meses)
-
-1. **Reducción de falsos positivos:**
-   - Análisis de contexto mejorado
-   - Features adicionales basadas en AST
-   - Ensemble con análisis estático tradicional
-
-2. **Cobertura ampliada:**
-   - OWASP Top 10 completo
-   - CWE (Common Weakness Enumeration) adicionales
-   - Vulnerabilidades específicas de frameworks
-
-3. **Interpretabilidad mejorada:**
-   - Integración SHAP en reportes estándar
-   - Visualizaciones interactivas
-   - Sugerencias de corrección automáticas
-
-### Medio Plazo (3-6 meses)
-
-1. **Análisis de flujo de datos:**
-   - Taint analysis para seguimiento de datos no confiables
-   - Análisis interprocedural
-   - Detección de sanitización
-
-2. **Soporte multi-lenguaje:**
-   - Java, C#, PHP, Ruby
-   - Frameworks específicos (Django, React, Angular)
-   - Configuraciones de infraestructura (Docker, K8s)
-
-3. **Machine Learning avanzado:**
-   - Modelos de deep learning (CodeBERT, GraphCodeBERT)
-   - Transfer learning para adaptación rápida
-   - Active learning con feedback de expertos
-
-### Largo Plazo (6-12 meses)
-
-1. **Plataforma completa:**
-   - Dashboard centralizado para múltiples proyectos
-   - API REST para integración custom
-   - Gestión de políticas y umbrales por proyecto
-
-2. **Análisis dinámico:**
-   - Integración con fuzzing
-   - Correlación con resultados SAST/DAST
-   - Priorización basada en explotabilidad
-
-3. **Aprendizaje continuo:**
-   - Pipeline de reentrenamiento automático
-   - Incorporación de CVE en tiempo real
-   - Adaptación a patrones de código específicos del proyecto
-
 ## Contribución
 
 ### Proceso de Contribución
