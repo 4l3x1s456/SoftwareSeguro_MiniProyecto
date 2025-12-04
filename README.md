@@ -1,12 +1,12 @@
 # Sistema de Detección de Vulnerabilidades con Machine Learning
 
-## ✅ Cumplimiento de Especificaciones
+## Cumplimiento de Especificaciones
 
 Este proyecto implementa un modelo predictivo de vulnerabilidades que cumple con todas las especificaciones requeridas:
 
-### 🎯 5. Entregable - Funcionamiento
+###  5. Entregable - Funcionamiento
 
-#### ✅ **Pipeline de extracción de características**
+####  **Pipeline de extracción de características**
 - **Implementado**: Análisis automático del código fuente mediante `preprocesar_vulnerabilidades.py`
 - **Características extraídas**: 
   - Longitud del código y número de líneas
@@ -18,26 +18,26 @@ Este proyecto implementa un modelo predictivo de vulnerabilidades que cumple con
     - Funciones peligrosas/deprecated
     - Patrones de inyección
 
-#### ✅ **Análisis de patrones de riesgo**
+####  **Análisis de patrones de riesgo**
 - **Funciones deprecated detectadas**: gets, strcpy, sprintf, strcat, system, exec
 - **Patrones de inyección identificados**: WHERE, FROM, INTO, VALUES
 - **Concatenación insegura**: Detección de patrones `' +` y `" +`
 - **Random Forest**: 50 árboles para clasificación con alta precisión
 
-#### ✅ **Alertas automáticas (>70% probabilidad)**
+####  **Alertas automáticas (>70% probabilidad)**
 - **Sistema de alertas implementado**:
-  - 🚨 **CRÍTICA**: Probabilidad > 70% → Acción inmediata requerida
-  - ⚠️ **MEDIA**: Probabilidad 50-70% → Revisión recomendada  
-  - ✅ **BAJA**: Probabilidad < 50% → Código seguro
+  - **CRÍTICA**: Probabilidad > 70% → Acción inmediata requerida
+  - **MEDIA**: Probabilidad 50-70% → Revisión recomendada  
+  - **BAJA**: Probabilidad < 50% → Código seguro
 - **Salida con probabilidades**: El modelo muestra tanto clasificación binaria como probabilidades
 
-#### ✅ **Integración GitHub Actions**
+#### **Integración GitHub Actions**
 - **Pipeline CI/CD completo**: `.github/workflows/vulnerability-detection.yml`
 - **Análisis automático**: En cada commit y pull request
 - **Comentarios en PRs**: Reportes automáticos con resultados
 - **Artefactos**: Subida automática de reportes generados
 
-## 📊 Resultados de la Demostración
+## Resultados de la Demostración
 
 ### Análisis del Ejemplo
 - **Probabilidad de vulnerabilidad**: 100.0% 
@@ -56,7 +56,7 @@ Este proyecto implementa un modelo predictivo de vulnerabilidades que cumple con
 - **Features**: 13 características avanzadas
 - **Datos**: 801 muestras de entrenamiento
 
-## 🚀 Archivos Implementados
+## Archivos Implementados
 
 ### Pipeline de CI/CD
 ```
@@ -86,7 +86,7 @@ demo_vulnerabilities.py               # Demostración completa del sistema
 demo_summary.json                    # Resumen de especificaciones cumplidas
 ```
 
-## 🔧 Uso del Sistema
+## Uso del Sistema
 
 ### 1. Entrenamiento del Modelo
 ```bash
@@ -117,7 +117,7 @@ python scripts/generate_basic_report.py
 python scripts/extract_features_from_diff.py
 ```
 
-## 🎯 Integración Continua
+## Integración Continua
 
 El sistema está configurado para ejecutarse automáticamente en:
 - **Commits** en branches main/develop
@@ -133,24 +133,24 @@ El sistema está configurado para ejecutarse automáticamente en:
 4. Se genera reporte HTML con explicaciones
 5. Se comenta en PR si hay vulnerabilidades críticas (>70%)
 
-## 📈 Interpretabilidad
+## Interpretabilidad
 
 - **Reportes HTML**: Explicaciones detalladas de decisiones del modelo
 - **Gráficos de importancia**: Visualización de características más relevantes
 - **Distribución de riesgo**: Análisis de probabilidades en el dataset
 - **Explicaciones por muestra**: Contribución de cada característica
 
-## ✅ Verificación de Cumplimiento
+##  Verificación de Cumplimiento
 
 | Especificación | Estado | Implementación |
 |---|---|---|
-| Pipeline extracción características | ✅ CUMPLE | `preprocesar_vulnerabilidades.py` |
-| Análisis patrones de riesgo | ✅ CUMPLE | Detección funciones deprecated e inyecciones |
-| Alertas automáticas >70% | ✅ CUMPLE | Sistema de alertas por probabilidades |
-| Integración GitHub Actions | ✅ CUMPLE | `.github/workflows/vulnerability-detection.yml` |
-| Reportes interpretables | ✅ CUMPLE | Reportes HTML + SHAP |
+| Pipeline extracción características | CUMPLE | `preprocesar_vulnerabilidades.py` |
+| Análisis patrones de riesgo | CUMPLE | Detección funciones deprecated e inyecciones |
+| Alertas automáticas >70% | CUMPLE | Sistema de alertas por probabilidades |
+| Integración GitHub Actions | CUMPLE | `.github/workflows/vulnerability-detection.yml` |
+| Reportes interpretables | CUMPLE | Reportes HTML + SHAP |
 
-## 🏆 Mejoras Implementadas
+## Mejoras Implementadas
 
 1. **Características avanzadas**: 13 features específicas para vulnerabilidades
 2. **Sistema de alertas inteligente**: Basado en probabilidades del modelo
