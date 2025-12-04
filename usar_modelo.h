@@ -39,17 +39,17 @@ void usar_modelo_mineriadatos()
         // Alerta automática si probabilidad > 70%
         if (prob_vulnerable > 0.70)
         {
-            std::cout << "\n🚨 ALERTA CRITICA: Alta probabilidad de vulnerabilidad detectada!\n";
-            std::cout << "   Recomendacion: Revisar inmediatamente el codigo.\n";
+            std::cout << "\nALERTA CRITICA: Alta probabilidad de vulnerabilidad detectada!\n";
+            std::cout << "Recomendacion: Revisar inmediatamente el codigo.\n";
         }
         else if (prob_vulnerable > 0.50)
         {
-            std::cout << "\n⚠️  ADVERTENCIA: Posible vulnerabilidad detectada.\n";
-            std::cout << "   Recomendacion: Revisar el codigo por precaucion.\n";
+            std::cout << "\nADVERTENCIA: Posible vulnerabilidad detectada.\n";
+            std::cout << "Recomendacion: Revisar el codigo por precaucion.\n";
         }
         else
         {
-            std::cout << "\n✅ CODIGO SEGURO: Baja probabilidad de vulnerabilidad.\n";
+            std::cout << "\nCODIGO SEGURO: Baja probabilidad de vulnerabilidad.\n";
         }
         
         if (prediction[0] == 1)
