@@ -19,15 +19,14 @@ void usar_modelo_mineriadatos()
         return;
     }
 
-    // 3. Obtener probabilidades de clasificación
-    arma::mat probabilities;
-    rf.Classify(exampleData, probabilities);
-    
-    // 4. Obtener predicción binaria
+    // 3. Obtener prediccion binaria y probabilidades
     arma::Row<size_t> prediction;
-    rf.Classify(exampleData, prediction);
+    arma::mat probabilities;
+    
+    // Usar la sintaxis correcta de MLPack para obtener ambos
+    rf.Classify(exampleData, prediction, probabilities);
 
-    // 5. Interpretar la predicción con probabilidades
+    // 4. Interpretar la prediccion con probabilidades
     if (prediction.n_elem > 0 && probabilities.n_elem > 0)
     {
         double prob_vulnerable = probabilities.n_rows > 1 ? probabilities(1, 0) : 0.0;
@@ -41,12 +40,12 @@ void usar_modelo_mineriadatos()
         if (prob_vulnerable > 0.70)
         {
             std::cout << "\n🚨 ALERTA CRITICA: Alta probabilidad de vulnerabilidad detectada!\n";
-            std::cout << "   Recomendación: Revisar inmediatamente el código.\n";
+            std::cout << "   Recomendacion: Revisar inmediatamente el codigo.\n";
         }
         else if (prob_vulnerable > 0.50)
         {
             std::cout << "\n⚠️  ADVERTENCIA: Posible vulnerabilidad detectada.\n";
-            std::cout << "   Recomendación: Revisar el código por precaución.\n";
+            std::cout << "   Recomendacion: Revisar el codigo por precaucion.\n";
         }
         else
         {
@@ -54,9 +53,9 @@ void usar_modelo_mineriadatos()
         }
         
         if (prediction[0] == 1)
-            std::cout << "\nClasificación binaria: VULNERABLE\n";
+            std::cout << "\nClasificacion binaria: VULNERABLE\n";
         else
-            std::cout << "\nClasificación binaria: SEGURO\n";
+            std::cout << "\nClasificacion binaria: SEGURO\n";
     }
     else
     {

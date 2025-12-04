@@ -36,7 +36,7 @@ void entrenar_modelo_mineriadatos()
     arma::Row<size_t> ytest =
         arma::conv_to< arma::Row<size_t> >::from(testDataFull.row(featureDim));
 
-    // 4. Predicción y guardado
+    // 4. Prediccion y guardado
     arma::Row<size_t> predictions;
     rf.Classify(Xtest, predictions);
 

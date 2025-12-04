@@ -67,7 +67,7 @@ int main()
                 break;
                 
             default:
-                cout << "\nOpción invalida. Por favor seleccione 1, 2, 3 o 4.\n";
+                cout << "\nOpcion invalida. Por favor seleccione 1, 2, 3 o 4.\n";
                 system("pause");
         }
         

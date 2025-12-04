@@ -54,10 +54,10 @@ def analyze_example(model):
         print(
             f"   Alta probabilidad de vulnerabilidad detectada: {prob_vulnerable:.1%}"
         )
-        print(f"   ⚠️  ACCIÓN REQUERIDA: Revisar código inmediatamente")
+        print(f"⚠️ ACCIÓN REQUERIDA: Revisar código inmediatamente")
         alert_level = "CRITICA"
     elif prob_vulnerable > 0.50:
-        print(f"\n⚠️  ADVERTENCIA")
+        print(f"\n⚠️ ADVERTENCIA")
         print(f"   Posible vulnerabilidad detectada: {prob_vulnerable:.1%}")
         print(f"   💡 RECOMENDACIÓN: Revisar código por precaución")
         alert_level = "MEDIA"

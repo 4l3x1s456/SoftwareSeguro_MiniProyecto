@@ -21,7 +21,7 @@ def extract_features_from_demo_file():
     with open(demo_file, 'r', encoding='utf-8') as f:
         content = f.read()
 
-    # Extraer características usando la misma función que en preprocesar_vulnerabilidades.py
+    # Extraer características usando la misma funcion que en preprocesar_vulnerabilidades.py
     features = extract_code_features(content)
 
     # Agregar score promedio como en entrenamiento
@@ -41,7 +41,7 @@ def extract_features_from_demo_file():
     df.to_csv("example_features.csv", index=False, header=False)
 
     # Mostrar análisis detallado
-    print("🔍 ANÁLISIS DEL CÓDIGO VULNERABLE:")
+    print("🔍 ANÁLISIS DEL CODIGO VULNERABLE:")
     print("=" * 50)
     print(f"📄 Archivo analizado: {demo_file}")
     print(f"📊 Características extraídas:")
@@ -51,7 +51,7 @@ def extract_features_from_demo_file():
     print(f"   • Patrones XSS detectados: {features['xss_risk']}")
     print(f"   • Concatenaciones inseguras: {features['concat_risk']}")
     print(f"   • Funciones peligrosas: {features['dangerous_count']}")
-    print(f"   • Patrones de inyección: {features['injection_risk']}")
+    print(f"   • Patrones de inyeccion: {features['injection_risk']}")
 
     # Calcular score de riesgo
     risk_score = (features['sql_risk'] * 2) + (features['xss_risk'] * 2) + \
@@ -71,14 +71,14 @@ def extract_features_from_demo_file():
 
     print(f"\n✅ Características guardadas en example_features.csv")
     print(
-        "   Ahora puedes usar el modelo C++ (Opción 2) para analizar este código"
+        "   Ahora puedes usar el modelo C++ (Opcion 2) para analizar este codigo"
     )
 
     return feature_array
 
 
 def extract_code_features(code_text):
-    """Extrae características del código usando la misma lógica que preprocesar_vulnerabilidades.py"""
+    """Extrae características del codigo usando la misma logica que preprocesar_vulnerabilidades.py"""
     text = str(code_text).lower()
 
     # Características básicas
@@ -103,7 +103,7 @@ def extract_code_features(code_text):
     ]
     xss_risk = sum([text.count(pattern) for pattern in xss_patterns])
 
-    # Concatenación insegura (patrón común en ambas vulnerabilidades)
+    # Concatenacion insegura (patron común en ambas vulnerabilidades)
     concat_risk = text.count("' +") + text.count('" +') + text.count(
         "+ '") + text.count('+ "')
 
@@ -111,7 +111,7 @@ def extract_code_features(code_text):
     dangerous_funcs = ["gets", "strcpy", "sprintf", "strcat", "system", "exec"]
     dangerous_count = sum([text.count(func) for func in dangerous_funcs])
 
-    # Patrones de inyección
+    # Patrones de inyeccion
     injection_patterns = ["where", "from", "into", "values"]
     injection_risk = sum(
         [text.count(pattern) for pattern in injection_patterns])
@@ -133,8 +133,8 @@ def extract_code_features(code_text):
 
 
 def main():
-    """Función principal"""
-    print("🔍 EXTRACTOR DE CARACTERÍSTICAS - CÓDIGO VULNERABLE")
+    """Funcion principal"""
+    print("🔍 EXTRACTOR DE CARACTERÍSTICAS - CODIGO VULNERABLE")
     print("Genera example_features.csv para análisis con modelo C++")
     print("=" * 60)
 
@@ -144,7 +144,7 @@ def main():
         print("\n" + "=" * 60)
         print("✅ PROCESO COMPLETADO")
         print(
-            "📋 Siguiente paso: Ejecutar ./Modelo_MineriaDatos.exe y seleccionar opción 2"
+            "📋 Siguiente paso: Ejecutar ./Modelo_MineriaDatos.exe y seleccionar opcion 2"
         )
         return True
     else:
